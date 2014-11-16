@@ -1,0 +1,203 @@
+body{
+	background-color:#F9CAE3;
+	width:98%;
+	height:97%;
+	font-family:arial, helvetica, sans-serif; 
+	/*-webkit-box-shadow: 1px 1px 33px 16px rgba(242,196,240,0.68);
+	-moz-box-shadow: 1px 1px 33px 16px rgba(242,196,240,0.68);
+	box-shadow: 1px 1px 33px 16px rgba(242,196,240,0.68);*/
+}
+	
+h1{
+	color:#BA0562;
+}
+
+.wrapper_prim{
+	width:95%;
+	height:600px;
+	/*overflow:auto;*/
+	text-align:center;
+	margin:auto;
+	position: relative;
+	}
+
+.cont_fields{
+	border:1px solid #D387AE;
+	margin:0 auto;
+	border-collapse: collapse;
+	position: relative;
+	}
+
+.cont_prim{
+	height:370px;
+	border:1px solid #D387AE;
+	margin:6px auto 0 -1px;
+	border-collapse: collapse;
+	position: relative;
+	float:left;
+	background:#F9CAE3;
+}
+	
+.cont_sec{
+	height:370px;
+	border:1px solid #D387AE;
+	margin-top:6px;
+	border-collapse: collapse;
+	position: relative;
+	float:right;
+	background:#F9CAE3;
+}
+
+.labelText{
+	background:#E86DAC;
+	font-weight:bold;
+	padding:5px;
+	width:100px;
+	float:left;
+	height:22px;
+	text-align:left;
+}
+
+.inputField{
+background:#FC92C9;
+font-weight:bold;
+padding:5px;
+float:left;
+}
+
+.panel-body{
+background:#F9CAE3;
+}
+
+.tabs{
+border-bottom:1px solid #BA0577;
+}
+.tabs-header, .tabs-tool{
+background:#D863A0;
+border-color: #D863A0;
+}
+
+.tabs li.tabs-selected a.tabs-inner{
+background:#FFAFD8;
+border:1px solid #BA0577;
+}
+
+.tabs li a.tabs-inner{
+background:#BA0577;
+color:#FCD4E8;
+font-weight:bold;
+}
+
+.tabs li a.tabs-inner:hover{
+background:#F2B0D2;
+color: #777;
+font-weight: bold;
+outline: medium none;
+}
+
+.productSearchBox{
+	margin-left: 0px; 
+	margin-right: 18px; 
+	padding-top: 2px; 
+	padding-bottom: 2px; 
+	width: 272px;
+}
+
+#hiddenDivForProducts{
+width: 298px;
+border: 1px solid #d387ae;
+display:none;
+position:absolute;
+z-index:1;
+}
+
+.searchProductList{
+background:#FFC6E3;
+cursor:pointer;
+}
+.productTop{
+margin-top:10px;
+height:32px;
+background:none repeat scroll 0 0 #fc92c9;
+}
+
+.productBottom{
+width:100%;
+height: 377px;
+background:#FC92C9;
+}
+
+.productDetailsLabel{
+font-weight:bold;
+}
+
+.productEvenRow{
+background:#FF8EC8;
+color:#9E0051;
+}
+
+.productOddRow{
+background:#FFC6E3;
+color:#9E195D;
+}
+
+.buttonsPrimary{
+border:4px solid #BA0577;-webkit-box-shadow: #878787 0px 2px 2px ;-moz-box-shadow: #878787 0px 2px 2px ; box-shadow: #878787 0px 2px 2px ; -webkit-border-radius: 23px; -moz-border-radius: 23px;border-radius: 23px;font-size:11px;margin-top: 4px;font-family:arial, helvetica, sans-serif; padding: 1px; text-decoration:none; display:inline-block;text-shadow: 2px 2px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+ background-color: #ff5db1; background-image: -webkit-gradient(linear, left top, left bottom, from(#ff5db1), to(#ef007c));
+ background-image: -webkit-linear-gradient(top, #ff5db1, #ef007c);
+ background-image: -moz-linear-gradient(top, #ff5db1, #ef007c);
+ background-image: -ms-linear-gradient(top, #ff5db1, #ef007c);
+ background-image: -o-linear-gradient(top, #ff5db1, #ef007c);
+ background-image: linear-gradient(to bottom, #ff5db1, #ef007c);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff5db1, endColorstr=#ef007c);
+}
+
+.buttonsPrimary:hover{
+ border:4px solid #BA0577;
+ background-color: #ff2a98; background-image: -webkit-gradient(linear, left top, left bottom, from(#ff2a98), to(#bc0062));
+ background-image: -webkit-linear-gradient(top, #ff2a98, #bc0062);
+ background-image: -moz-linear-gradient(top, #ff2a98, #bc0062);
+ background-image: -ms-linear-gradient(top, #ff2a98, #bc0062);
+ background-image: -o-linear-gradient(top, #ff2a98, #bc0062);
+ background-image: linear-gradient(to bottom, #ff2a98, #bc0062);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff2a98, endColorstr=#bc0062);
+}
+
+.selectedProductList{
+border:2px solid #FF8EC8;
+color:#9E0051;
+width:97%;
+padding:5px;
+margin:4px;
+}
+
+.selectedProductsListContainer{
+margin-top: 37px;
+}
+
+.RuleHeadingPrimary{
+padding-top:10px;
+margin-top:10px;
+height:23px;
+background:none repeat scroll 0 0 #DD4B97;
+color:#49383D;
+font-weight:bold;
+}
+
+.RuleHeadingSecondary{
+padding-top:10px;
+margin-top:10px;
+height:23px;
+background:none repeat scroll 0 0 #fc92c9;
+color:#49383D;
+font-weight:bold;
+}
+
+.ruleInput{
+width:99%;
+overflow:auto;
+border:1px solid #DD4B97;
+resize: none;
+-webkit-border-radius: 4px; 
+-moz-border-radius: 4px;
+border-radius: 4px;
+margin-left:4px;
+}

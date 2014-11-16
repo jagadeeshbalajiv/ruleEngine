@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `table_rule` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 INSERT INTO `table_rule` (`rule_id`, `rule_name`, `rule_data`, `is_rule_active`) VALUES
-(1, 'Rule1', '{total >} "1000" && {category in} "1,2"  && {category not in} "5"  && {free shipping} && {%Discount} "20" ', 1);
+(1, 'Rule1', '{total >} "1000" && {category in} "1,2"  && {category not in} "5"  ==> {free shipping} && {%Discount} "20" ', 1);
 
 
 ALTER TABLE `table_product_category`

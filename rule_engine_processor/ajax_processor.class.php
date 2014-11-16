@@ -54,7 +54,7 @@ class ajax_processor{
 		
 		if($ruleAction != ''){
 			if($ruleData != ''){
-				$ruleData .= ' && ';
+				$ruleData .= ' ==> ';
 			}
 			$ruleData .= $ruleAction;
 		}

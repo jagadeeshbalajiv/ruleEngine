@@ -10,6 +10,7 @@
 		<input type='hidden' id='selectedProductIds' name='selectedProductIds' />
 		<div id='hiddenDivForProducts'></div>
 	</div>
+	<div style="width: 298px; height: 20px;float: left;padding-top: 10px; padding-left:4px; padding-right:4px;width: auto;">(Use search terms like puma,Nike,Adidas,Lee cooper and Woodland)</div>
 	<input type="button" name='clearSelectedProducts' id='clearSelectedProducts' value='Clear Cart' class='buttonsPrimary'/>
 </div>
 <div class='productBottom'>

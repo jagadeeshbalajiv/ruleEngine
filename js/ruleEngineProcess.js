@@ -28,7 +28,7 @@ $(document).ready(function(){
 	$('#clearSelectedProducts').click(function(e){
 		e.preventDefault();
 		$('#searchProductForCart, #selectedProductIds').val('');
-		$('.selectedProductsListContainer').html('');
+		$('.selectedProductsListContainer, .cartDetails').html('');
 	});
 	
 	$('#saveRule').click(function(){
@@ -46,6 +46,8 @@ $(document).ready(function(){
 	var containerSecondarywidth = (wrapperWidthRendered*34.5)/100;
 	$('.cont_prim').css('width',containerPrimarywidth);
 	$('.cont_sec').css('width',containerSecondarywidth);
+		
+	listExistingRules();
 });
 
 function loadProductList(searchTerm){
@@ -70,8 +72,9 @@ function selectProduct(productDetails){
 	}
 	selectedProductIds = selectedProductIds+productDetailsArray[0];
 	$('#selectedProductIds').val(selectedProductIds);
-	var selectedProductsList = $('.selectedProductsListContainer').html()+"<div class='selectedProductList'>"+productDetailsArray[1]+"</div>";
+	var selectedProductsList = $('.selectedProductsListContainer').html()+"<div class='selectedProductList'>"+productDetailsArray[1]+" - "+productDetailsArray[4]+"</div>";
 	$('.selectedProductsListContainer').html(selectedProductsList);
+	processProductCart();
 }
 
 function ruleOptionsChange(selectedOptionId, targetInputId){
@@ -120,6 +123,31 @@ function submitRuleData(){
 	      data: $('#ruleDataForm').serialize(),
 	      success: function( response ) {
 			$('#ruleDataForm').trigger("reset");
+			listExistingRules();
+	      }
+	    } );
+}
+
+function listExistingRules(){
+	$.ajax( {
+	      type: "POST",
+	      url: "../rule_engine_processor/ajax_processor.php?request_type=viewRule",
+	      success: function( response ) {
+			$('#listExistingRules').html(response);
+	      }
+	    } );
+}
+
+function processProductCart(){
+	$.ajax( {
+	      type: "POST",
+	      url: "../rule_engine_processor/ajax_processor.php",
+	      data: {
+				request_type:'processProductCart',
+				selectedProductIds:$('#selectedProductIds').val()
+			},
+	      success: function( response ) {
+			$('.cartDetails').html(response);
 	      }
 	    } );
 }

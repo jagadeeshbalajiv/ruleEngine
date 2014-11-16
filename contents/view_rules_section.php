@@ -6,6 +6,7 @@
 		<div class="inputField">
 			<input type="text" placeholder="Rule name" name="ruleName" id="ruleName" class="textbox-text validatebox-text" style='width:200px;' autocomplete="off">
 		</div>
+		<input type="button" class="buttonsPrimary" style="float:right;margin-right:15px;" value="Save Rule" id="saveRule" name="saveRule">
 	</div>
 	
 	<div class='RuleHeadingSecondary'>Condition : 
@@ -49,5 +50,7 @@
 		</select>
 	</div>
 	<textarea id='ruleAction' name='ruleAction' class='ruleInput'></textarea>
-	<input type="button" class="buttonsPrimary" style="float:right;margin-right:15px;" value="Save Rule" id="saveRule" name="saveRule">
+	
 </form>
+<div class='RuleHeadingPrimary' style='margin-top:5px;'>Existing Rules :</div>
+<div class='productBottom' id='listExistingRules'></div>

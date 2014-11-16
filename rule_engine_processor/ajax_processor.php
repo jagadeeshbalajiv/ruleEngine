@@ -11,6 +11,14 @@ switch ($requestType) {
 	echo ajax_processor::saveRule();
 	break;
 	
+	case 'viewRule':
+	echo ajax_processor::viewRule();
+	break;
+	
+	case 'processProductCart':
+	echo ajax_processor::processProductCart();
+	break;
+		
 	default:
 		return 'Invalid request. Cannot be processed.';
 	break;

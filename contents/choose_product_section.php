@@ -5,12 +5,12 @@
 			<span class="textbox-addon textbox-addon-right" style="right: 0px;">
 				<a tabindex="-1" icon-index="0" class="textbox-icon icon-search textbox-icon-disabled" href="javascript:void(0)" style="width: 18px; height: 20px;"></a>
 			</span>
-			<input type="text" autocomplete="off" class="textbox-text validatebox-text productSearchBox" id='searchProductForCart' name='searchProductForCart' placeholder="Search..">
+			<input type="text" autocomplete="off" class="textbox-text validatebox-text productSearchBox" id='searchProductForCart' name='searchProductForCart' placeholder="Search.. (min 3 characters)">
 		</span>
 		<input type='hidden' id='selectedProductIds' name='selectedProductIds' />
 		<div id='hiddenDivForProducts'></div>
 	</div>
-	<div style="width: 298px; height: 20px;float: left;padding-top: 10px; padding-left:4px; padding-right:4px;width: auto;">(Use search terms like puma,Nike,Adidas,Lee cooper and Woodland)</div>
+	<div style="width: 298px; height: 20px;float: left;padding-top: 10px; padding-left:4px; padding-right:4px;width: auto;">(Use search terms like Puma, Nike, Adidas, Lee cooper and Woodland)</div>
 	<input type="button" name='clearSelectedProducts' id='clearSelectedProducts' value='Clear Cart' class='buttonsPrimary'/>
 </div>
 <div class='productBottom'>

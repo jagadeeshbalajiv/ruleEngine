@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	//Rendering components with jQuery EasyUI plugin - Begins
 	$('#selectMainSection').tabs({
 	    border:false,
@@ -6,6 +7,10 @@ $(document).ready(function(){
 	});
 	//Rendering components with jQuery EasyUI plugin - Ends
 	
+	//To reset input fields during page reload
+	resetInputFields();
+	
+	//Returns the search result for products
 	$('#searchProductForCart').focus().keyup(function(e){
 		e.preventDefault();
 		var searchTerm = $.trim($('#searchProductForCart').val());
@@ -16,6 +21,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	//Hides the products list when mouse is clicked on the screen
 	$('#searchProductForCart').blur(function(e){
 		e.preventDefault();
 		setTimeout(function(){
@@ -25,19 +31,29 @@ $(document).ready(function(){
 		
 	});
 	
+	//Clear the shopping cart
 	$('#clearSelectedProducts').click(function(e){
 		e.preventDefault();
 		$('#searchProductForCart, #selectedProductIds').val('');
 		$('.selectedProductsListContainer, .cartDetails').html('');
 	});
 	
+	//Saves the rule after validation
 	$('#saveRule').click(function(){
-		if($.trim($('#ruleName').val()) != ''){
-			submitRuleData();
-		} else{
+		if($.trim($('#ruleName').val()) == ''){
 			alert('Please enter a valid name for the rule');
+			return false;
 		}
-		
+		if(($.trim($('#ruleCondition').val()) == '') || ($.trim($('#ruleAction').val()) == '')){
+			alert('Please enter condition and action for the rule');
+			return false;
+		}
+			submitRuleData();
+	});
+	
+	//Clears the rules section input fields
+	$('#clearRules').click(function(){
+		clearRuleInputs();
 	});
 	
 	//To calculate width for selected products and rule engine results section
@@ -46,10 +62,12 @@ $(document).ready(function(){
 	var containerSecondarywidth = (wrapperWidthRendered*34.5)/100;
 	$('.cont_prim').css('width',containerPrimarywidth);
 	$('.cont_sec').css('width',containerSecondarywidth);
-		
+	
+	//Lists all the existing rules which are set as active rules during page load
 	listExistingRules();
 });
 
+//Lists all the existing rules which are set as active rules
 function loadProductList(searchTerm){
 	$.ajax({
 		  url: "../rule_engine_processor/ajax_processor.php",
@@ -64,6 +82,7 @@ function loadProductList(searchTerm){
 		});
 }
 
+//Adds the selected product to the shopping cart and returns the processed result based on the rules
 function selectProduct(productDetails){
 	var productDetailsArray = productDetails.split("~~");
 	var selectedProductIds = $.trim($('#selectedProductIds').val());
@@ -77,11 +96,13 @@ function selectProduct(productDetails){
 	processProductCart();
 }
 
+//Inserts the selected option in the rule input fields
 function ruleOptionsChange(selectedOptionId, targetInputId){
 	insertStringNextToCursor(targetInputId,$('#'+selectedOptionId+' option:selected').val());
 	$('#'+selectedOptionId).val('');
 }
 
+//Inserts text at the current cursor location
 function insertStringNextToCursor(elementId,text) {
     var txtarea = document.getElementById(elementId);
     var scrollPos = txtarea.scrollTop;
@@ -116,6 +137,7 @@ function insertStringNextToCursor(elementId,text) {
     txtarea.scrollTop = scrollPos;
 }
 
+//Submits the rule information after validation for saving
 function submitRuleData(){
 	$.ajax( {
 	      type: "POST",
@@ -128,6 +150,7 @@ function submitRuleData(){
 	    } );
 }
 
+//Lists all the existing rules which are set as active rules
 function listExistingRules(){
 	$.ajax( {
 	      type: "POST",
@@ -138,6 +161,7 @@ function listExistingRules(){
 	    } );
 }
 
+//Validates the products selected and returns the consolidated result
 function processProductCart(){
 	$.ajax( {
 	      type: "POST",
@@ -151,3 +175,16 @@ function processProductCart(){
 	      }
 	    } );
 }
+
+//Clears/Resets all the input fields
+function resetInputFields(){
+	$('#searchProductForCart, #selectedProductIds').val('');
+	$('.selectedProductsListContainer, .cartDetails').html('');
+	clearRuleInputs();
+}
+
+//Clears all the input fields of rules section
+function clearRuleInputs(){
+	$('#ruleName, #ruleCondition, #ruleAction').val('');
+}
+

@@ -201,3 +201,14 @@ resize: none;
 border-radius: 4px;
 margin-left:4px;
 }
+
+.highlightedText{
+font-size: 12px;
+line-height: 25px;
+color: #777;
+font-weight: bold;
+}
+
+.cartDetails{
+text-align : center;
+}

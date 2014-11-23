@@ -6,7 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/themes/bootstrap/easyui.css">
 		<link rel="stylesheet" type="text/css" href="../css/themes/icon.css">
 		<link rel="stylesheet" href="../css/main.css" />
-		
 		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
 		<script type="text/javascript" src="../js/ruleEngineProcess.js"></script>
@@ -22,6 +21,9 @@
 				</div>
 				<div title='View Rules'>
 					<?php require_once ('view_rules_section.php'); ?>
+				</div>
+				<div title='Create Rules'>
+					<?php require_once ('save_rules_section.php'); ?>
 				</div>
 			</div>
 		</div>

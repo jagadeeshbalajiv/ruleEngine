@@ -64,11 +64,13 @@ CREATE TABLE IF NOT EXISTS `table_rule` (
   `rule_data` longtext NOT NULL,
   `is_rule_active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`rule_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 INSERT INTO `table_rule` (`rule_id`, `rule_name`, `rule_data`, `is_rule_active`) VALUES
-(1, 'Rule1', '{total >} "1000" && {category in} "1,2"  && {category not in} "5"  ==> {free shipping} && {%Discount} "20" ', 1);
-
+(1, 'Rule 1', '{total >} "1000" && {category in} "1,2"  || {category in} "1,2"  && {category not in} "5"  ==> {free shipping} && {%Discount} "20" ', 1),
+(2, 'Rule 2', '{total >} "2000" && {category in} "4"  ==> {flat discount} "500" ', 1),
+(3, 'Rule 3', '{total >} "4000" ==> {free product} "6" ', 1),
+(4, 'Rule 4', '{total >} "3000" && {total <} "4000"  ==> {free product} "7" ', 1);
 
 ALTER TABLE `table_product_category`
   ADD CONSTRAINT `foreign_key_category_id` FOREIGN KEY (`f_category_id`) REFERENCES `table_category` (`category_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
